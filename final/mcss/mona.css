@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: none;
+}
+
+/* Layout Container */
+.container-fluid {
+    display: flex;
+    flex: 1;
+    margin-top: 60px; /* Space for fixed header */
+    overflow: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #fff;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    width: 300px;
+    height: calc(100vh - 80px); /* Full height minus header */
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    z-index: 999;
+}
+
+/* Main Content Styles */
+main {
+    margin-left: 250px;
+    padding: 1.5rem;
+    height: calc(100vh - 100px); /* Full height minus header */
+    overflow-y: auto;
+    flex: 1;
+    background-color: #fff;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Carousel Image Styling */
+.carousel img {
+    border-radius: 10px;
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 80%;
+        position: fixed;
+        z-index: 1100;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
